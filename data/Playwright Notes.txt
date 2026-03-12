@@ -1,0 +1,74 @@
+Day -1 
+Set up
+Node js -> https://nodejs.org/en/download 
+Check for node version - node -v
+Editor - VS code 
+
+Create a folder for playwright repo
+
+Two ways to install playwright
+1. Using Plugins
+2. Using commands
+
+ctrl+shift+p ans search for install playwright
+
+
+npm init -y
+npx playwright install
+
+
+
+Day - 2
+
+Writing your first testcase
+Navigation 
+Interactions like click, fill, check….
+
+
+
+1. Page Injected by Playwright Test Runner
+
+When you use the Playwright Test runner (@playwright/test), it automatically provides a ready-to-use page object to your test.
+
+Playwright creates a browser instance, a context, and a page automatically before each test.
+
+You don’t need to launch the browser manually.
+
+After the test ends, Playwright closes them automatically.
+
+Each test runs in a fresh, isolated context.
+
+
+
+2. Creating a Page Manually from browser.newContext()
+
+Sometimes you want more control — for example:
+
+You need multiple contexts (simulate multiple users)
+
+You need to reuse storage state
+
+You want custom context options (e.g., geolocation, permissions, locale)
+
+Then, you create your own context & page manually.
+
+  // Launch the browser
+  const browser: Browser = await chromium.launch({ headless: false });
+
+  // Create a new browser context (like a new user session)
+  const context: BrowserContext = await browser.newContext();
+
+  // Create a new page (tab) inside that context
+  const page: Page = await context.newPage();
+
+  // Use the page
+  await page.goto('https://example.com');
+
+
+
+
+
+
+
+
+
