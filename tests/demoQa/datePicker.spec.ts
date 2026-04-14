@@ -5,7 +5,7 @@ import { test, expect } from "@playwright/test";
 //   await page.goto("https://testautomationpractice.blogspot.com/");
 
 //   let date = "10/17/2026";
-//     await page.pause()
+
 //   // Date picker
 //     let datePicker = page.locator("#datepicker");
 //     await datePicker.click();
@@ -16,7 +16,7 @@ import { test, expect } from "@playwright/test";
 
 test("Date picker example with keyboard", async ({ page }) => { 
     await page.goto("https://testautomationpractice.blogspot.com/");
-await page.pause()
+
 
 await page.locator("#txtDate").click();
     let month = page.locator("[aria-label='Select month']");

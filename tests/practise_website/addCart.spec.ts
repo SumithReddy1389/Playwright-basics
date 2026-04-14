@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
 // test("Add product to cart", async ({ page }) => {
 //   await page.goto("https://automationexercise.com/");
 
-//   await page.pause();
+
 
 //   await expect(page.getByRole("heading", { name: "Category" })).toBeVisible();
 //   await page.getByRole("link", { name: "Products" }).click();
@@ -77,7 +77,6 @@ import { test, expect } from "@playwright/test";
 
 // test("Add to cart and register", async ({ page }) => {
 //   await page.goto("https://automationexercise.com/");
-//   await page.pause();
 
 //   await page
 //     .locator(".features_items")
@@ -135,7 +134,7 @@ import { test, expect } from "@playwright/test";
 
 //     await page.goto("https://automationexercise.com/");
 
-//     // await page.pause();
+
 
 //     await expect(page.getByRole("heading", { name: "Category" })).toBeVisible();
 //     await page.getByRole("link", { name: "Products" }).click();

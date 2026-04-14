@@ -1,10 +1,11 @@
 import { test, expect } from "@playwright/test";
-import { HomePage } from "../../pages/homePage";
-import { RegisterPage } from "../../pages/registerPage";
+import { HomePage } from "../../../pages/homePage";
+import { RegisterPage } from "../../../pages/registerPage";
 
 let email: string = `sumith${Date.now()}@gmail.com`;
 let password: string = "Pass@123";
 let name = "sumith";
+let url = "https://automationexercise.com/";
 
 test.describe.serial("Register and Login", () => {
   test("Register user", async ({ page }) => {
@@ -12,7 +13,7 @@ test.describe.serial("Register and Login", () => {
     let homePage = new HomePage(page);
     let registerPage = new RegisterPage(page);
 
-    await page.goto("https://automationexercise.com/");
+    await page.goto(url);
     await homePage.signupLoginLink.click();
 
     await expect(homePage.signUpText).toBeVisible();
@@ -49,12 +50,22 @@ test.describe.serial("Register and Login", () => {
     await registerPage.continueButton.click();
     await expect(homePage.loggedInAsText).toBeVisible();
 
+    
+  });
+
+  test("Login user", async ({ page }) => {
+    let homePage = new HomePage(page);
+
+    await page.goto(url);
+    await homePage.signupLoginLink.click();
+    await homePage.loginEmail.fill(email);
+    await homePage.loginPassword.fill(password);
+    await homePage.loginButton.click();
+
+    await expect(homePage.loggedInAsText).toBeVisible();
+
     await homePage.deleteAccountButton.click();
     await expect(homePage.accountDeletedText).toBeVisible();
   });
 });
 
-
-// login 
-
-// any test case

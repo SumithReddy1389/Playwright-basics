@@ -15,6 +15,12 @@ export class HomePage {
   loggedInAsText: Locator;
   deleteAccountButton: Locator;
   accountDeletedText: Locator
+  recommendedItemsText: Locator;
+  recommendedFirstItem: Locator;
+  addedToCartText: Locator;
+  viewCartButton: Locator;
+  continueShoppingButton: Locator;
+  productAddedToCartText: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -30,6 +36,13 @@ export class HomePage {
     this.loggedInAsText = page.getByText("Logged in as");
     this.deleteAccountButton = page.getByRole("link", { name: " Delete Account" });
     this.accountDeletedText = page.getByText("Account Deleted!");
+    this.recommendedItemsText = page.locator(".recommended_items");
+    this.recommendedFirstItem = page.locator("#recommended-item-carousel")
+    this.addedToCartText = page.getByText("Added!");
+    this.viewCartButton = page.getByRole("link", { name: "View Cart" });
+    this.continueShoppingButton = page.getByRole("button", { name: "Continue Shopping" });
+    this.productAddedToCartText = page.getByText("Your product has been added to cart.");
+
   }
 
 

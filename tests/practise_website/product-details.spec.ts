@@ -3,7 +3,6 @@ import { test, expect } from "@playwright/test";
 test.describe("Product details", () => {
   test("View product details", async ({ page }) => {
     await page.goto("https://automationexercise.com/");
-    await page.pause();
 
     await expect(page.getByRole("heading", { name: "Category" })).toBeVisible();
     await page.getByRole("link", { name: "Products" }).click();

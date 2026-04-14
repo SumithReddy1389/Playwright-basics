@@ -186,7 +186,7 @@ import { test, expect } from "@playwright/test";
 
 // test("Upload file example", async ({ page }) => {
 //   await page.goto("https://testautomationpractice.blogspot.com/");
-//   await page.pause()
+
 //   await page.locator('#singleFileInput').setInputFiles("c:\\Users\\SumithReddy\\Desktop\\Playwright Notes.txt")
  
 //    await page.locator('#singleFileInput').setInputFiles(["\\data\\Playwright Notes.txt",
@@ -197,7 +197,7 @@ import { test, expect } from "@playwright/test";
 // mouse hover example
 test("Mouse hover example", async ({ page }) => {
   await page.goto("https://testautomationpractice.blogspot.com/#"); 
-  await page.pause();
+;
   await page.getByRole('button', { name: 'Point Me' }).hover();
 
   await page.getByRole('link', { name: 'Mobiles' }).click();
